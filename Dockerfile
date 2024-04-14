@@ -6,7 +6,7 @@ WORKDIR /src
 
 RUN dotnet restore
 
-RUN dotnet publish WebApplication3/WebApplication.csproj -c Release -o /app
+RUN dotnet publish WebApplication3/WebApplication3.csproj -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine
 
