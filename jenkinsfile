@@ -49,7 +49,7 @@ pipeline {
                     // Stop the currently running container (if any)
                     sh 'docker rm -f ${IMAGE_NAME} || true'
                     // Run the new container
-                    sh "docker run -d --name aspnetapp -p 8000:80 ${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker run -d --name WebApplication3 -p 8000:80 ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
