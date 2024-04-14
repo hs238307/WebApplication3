@@ -6,12 +6,10 @@ WORKDIR /src
 
 RUN dotnet restore
 
-RUN dotnet publish aspnetapp/aspnetapp.csproj -c Release -o /app
-
-RUN dotnet test --logger "trx;LogFileName=./aspnetapp.trx"
+RUN dotnet publish WebApplication3/WebApplication.csproj -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine
 
 COPY --from=builder /app .
 
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT ["dotnet", "WebApplication3.dll"]
